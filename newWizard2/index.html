@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBLB0bn1YFvGnjUNC-8HzbbMMKua1DpMHo",
+            authDomain: "mycafe-49aea.firebaseapp.com",
+            databaseURL: "https://mycafe-49aea.firebaseio.com",
+            projectId: "mycafe-49aea",
+            storageBucket: "mycafe-49aea.appspot.com",
+            messagingSenderId: "281295147064"
+        };
+
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+        db.settings({timestampsInSnapshots: true});
+    </script>
+
+    <script>
+        $( document ).ready(function() {
+
+
+            var _1er = 0;
+            var _2er = 0;
+            var _3er = 0;
+            var _4er = 0;
+            var _5er = 0;
+            var _6er = 0;
+            var _7er = 0;
+            var _gesamt = 0;
+            var change = false;
+
+            console.log( "ready!" );
+            console.log( "_1er"+_1er );
+            console.log( "_2er"+_2er );
+            console.log( "_3er"+_3er );
+            console.log( "_4er"+_4er );
+            console.log( "_5er"+_5er );
+            console.log( "_5er"+_6er );
+            console.log( "_5er"+_7er );
+
+            gesamt(_gesamt);
+
+            $("#number_people_11").click(function () {
+                _1er = 5;
+
+                $("#verkaufLabel").html("Verkaufte_Flaschen [ points:"+ _1er+" ]");
+                //console.log("test :" + $("#verkaufLabel").text)
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_12").click(function () {
+                _1er = 10;
+
+                $("#verkaufLabel").html("Verkaufte_Flaschen [ points:"+ _1er+" ]");
+                console.log("points :" + _1er)
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_13").click(function () {
+                _1er = 20;
+
+                $("#verkaufLabel").html("Verkaufte_Flaschen [ points:"+ _1er+" ]");
+
+                console.log("points :" + _1er)
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt)
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_21").click(function () {
+                _2er = 5;
+
+                $("#backBarLabel").html("Flaschen_auf_Backbar [ points:"+ _2er+" ]");
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_22").click(function () {
+                _2er = 10;
+
+                $("#backBarLabel").html("Flaschen_auf_Backbar [ points:"+ _2er+" ]");
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_23").click(function () {
+                _2er = 20;
+
+                $("#backBarLabel").html("Flaschen_auf_Backbar [ points:"+ _2er+" ]");
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_31").click(function () {
+                _3er = 1;
+
+                $("#karteLabel").html("Einträge_auf_Getränkekarte [ points:"+ _3er+" ]");
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_32").click(function () {
+                _3er = 3;
+
+                $("#karteLabel").html("Einträge_auf_Getränkekarte [ points:"+ _3er+" ]");
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_33").click(function () {
+                _3er = 10;
+
+                $("#karteLabel").html("Einträge_auf_Getränkekarte [ points:"+ _3er+" ]");
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_41").click(function () {
+                _4er = 20;
+
+                $("#logoLabel").html("Logo_auf_Getränkekarte [ points:"+ _4er+" ]");
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_42").click(function () {
+                _4er = 0;
+
+                $("#logoLabel").html("Logo_auf_Getränkekarte [ points:"+ _4er+" ]");
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_51").click(function () {
+                _5er = 3;
+
+                $("#lokalDekoLabel").html("Lokal_Deko [ points:"+ _5er+" ]");
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_52").click(function () {
+                _5er = 5;
+
+                $("#lokalDekoLabel").html("Lokal_Deko [ points:"+ _5er+" ]");
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_53").click(function () {
+                _5er = 10;
+
+                $("#lokalDekoLabel").html("Lokal_Deko [ points:"+ _5er+" ]");
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_61").click(function () {
+                _6er = 3;
+
+                $("#socialMediaLabel").html("Social_Media [ points:"+ _6er+" ]");
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_62").click(function () {
+                _6er = 5;
+
+                $("#socialMediaLabel").html("Social_Media [ points:"+ _6er+" ]");
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_63").click(function () {
+                _6er = 20;
+
+                $("#socialMediaLabel").html("Social_Media [ points:"+ _6er+" ]");
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_71").click(function () {
+                _7er = 3;
+
+                $("#empfehlungLabel").html("Empfehlung_x_Anfrage [ points:"+ _7er+" ]");
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+                gesamt(_gesamt);
+            });
+
+            $("#number_people_72").click(function () {
+                _7er = 10;
+
+                $("#empfehlungLabel").html("Empfehlung_x_Anfrage [ points:"+ _7er+" ]");
+
+                console.log("klick " + this.id)
+                console.log( "_1er"+_1er );
+                console.log( "_2er"+_2er );
+                console.log( "_3er"+_3er );
+                console.log( "_4er"+_4er );
+                console.log( "_5er"+_5er );
+
+                _gesamt = _1er + _2er + _3er + _4er + _5er + _6er + _7er;
+                console.log( "gesamt"+_gesamt);
+                gesamt(_gesamt);
+            });
+
+
+            function gesamt(pGesamt){
+                $("#lblGesamtpunkte").html("Gesamtpunkte: " + _gesamt);
+            }
+
+            $("#submit").click(function () {
+
+                if(change==false){
+                    change = true;
+                    this.style.background = "yellow";
+                    this.style.color = "black";
+                }else{
+                    change = false;
+
+                    this.style.background = "#ff2c57";
+                    this.style.color = "white";
+                }
+
+
+
+                console.log("klick submit......")
+                console.log( "_gesamt"+_gesamt );
+
+                console.log( "lokal:"+ $("#lokalName").val());
+
+                db.collection('lokale').add({
+                    lokalName: $("#lokalName").val(),
+                    lokalPunkte: _gesamt
+                });
+
+
+
+                console.log("ready");
+            });
+
+
+        });
+
+
+
+    </script>
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div><label style="color: black;font-size: 16px">J<small>IM</small> B<small>EAM</small> Challenge Dateneingabe:</label></div>
+            <div href="../"><a href="../index.html">[Home]</a></div>
+            <br>
+            <div class="booking-content">
+                <!--<div class="booking-image" style="background-color: white" >-->
+                    <!--&lt;!&ndash;<img class="booking-img" src="images/jim_beam_make_history_moodbild_3.jpg" alt="Booking Image">&ndash;&gt;-->
+                <!--</div>-->
+                <div class="booking-form">
+                    <form id="booking-form">
+
+                        <div class="form-group">
+                            <div class="select-list">
+                                <!--<select class="test" name="lokal" id="time"  required>-->
+                                    <!--<option value="">Lokal auswählen ...</option>-->
+                                    <!--<option value="sega">Segafredo</option>-->
+                                    <!--<option value="castelleto">Castelleto</option>-->
+                                    <!--<option value="gnadenlos">Gnadenlos</option>-->
+                                <!--</select>-->
+
+                                <input  id = "lokalName" type="text" class="form-control" placeholder="Lokalname eingeben">
+
+
+                            </div>
+                            <div id="lblGesamtpunkte">Gesamtpunkte:</div>
+                        </div>
+
+                        <div class="form-radio">
+                            <label id ="verkaufLabel" class="label-radio"> Verkaufte_Flaschen</label>
+                            <div class="radio-item-list">
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="5" id="number_people_11"/>
+                                    <label for="number_people_11">5</label>
+                                </span>
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="10" id="number_people_12"/>
+                                    <label for="number_people_12">10</label>
+                                </span>
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="20" id="number_people_13" />
+                                    <label for="number_people_13">20</label>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-radio">
+                            <label id ="backBarLabel" class="label-radio"> Flaschen_Backbar</label>
+                            <div class="radio-item-list">
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="1" id="number_people_21" />
+                                    <label for="number_people_21">1</label>
+                                </span>
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="3" id="number_people_22"/>
+                                    <label for="number_people_22">3</label>
+                                </span>
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="5" id="number_people_23" />
+                                    <label for="number_people_23">5</label>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-radio">
+                            <label id ="karteLabel"  class="label-radio"> Einträge_Getränkekarte</label>
+                            <div class="radio-item-list">
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="1" id="number_people_31" />
+                                    <label for="number_people_31">1</label>
+                                </span>
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="3" id="number_people_32"/>
+                                    <label for="number_people_32">3</label>
+                                </span>
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="5" id="number_people_33" />
+                                    <label for="number_people_33">5</label>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-radio">
+                            <label id ="logoLabel"  class="label-radio"> Logo_Getränkekarte</label>
+                            <div class="radio-item-list">
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="1" id="number_people_41" />
+                                    <label for="number_people_41">yes</label>
+                                </span>
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="3" id="number_people_42"/>
+                                    <label for="number_people_42">no</label>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-radio">
+                            <label id ="lokalDekoLabel"  class="label-radio"> Lokal_Deko</label>
+                            <div class="radio-item-list">
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="1" id="number_people_51" />
+                                    <label for="number_people_51">- -</label>
+                                </span>
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="3" id="number_people_52"/>
+                                    <label for="number_people_52">+ -</label>
+                                </span>
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="5" id="number_people_53" />
+                                    <label for="number_people_53">+ +</label>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-radio">
+                            <label id ="socialMediaLabel"  class="label-radio"> Social_Media</label>
+                            <div class="radio-item-list">
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="1" id="number_people_61" />
+                                    <label for="number_people_61">1</label>
+                                </span>
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="3" id="number_people_62"/>
+                                    <label for="number_people_62">3</label>
+                                </span>
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="5" id="number_people_63" />
+                                    <label for="number_people_63">5</label>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-radio">
+                            <label id ="empfehlungLabel"  class="label-radio"> Empfehlung_x_Anfrage</label>
+                            <div class="radio-item-list">
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="1" id="number_people_71" />
+                                    <label for="number_people_71">auf</label>
+                                </span>
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="3" id="number_people_72"/>
+                                    <label for="number_people_72">vor</label>
+                                </span>
+                            </div>
+                        </div>
+
+
+
+                        <!-- ... -->
+
+                        <div >
+                            <input type="button" value="save" class="submit" id="submit" name="submit" />
+                            <div href="../"><a href="../index.html">[Home]</a></div>
+                            <!--<div id = "labelserverSend">die Daten wurden zum Server gesendet</div>-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
