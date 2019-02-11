@@ -403,6 +403,8 @@
                     change = true;
                     this.style.background = "yellow";
                     this.style.color = "black";
+                    document.getElementById("submit").disabled = true;
+
                 }else{
                     change = false;
 
@@ -424,7 +426,7 @@
 
 
 
-                console.log("ready");
+                console.log("fertig");
             });
 
 
@@ -588,10 +590,12 @@
                         <!-- ... -->
 
                         <div >
-                            <input type="button" value="save" class="submit" id="submit" name="submit" />
-                            <div href="../"><a href="../index.html">[Home]</a></div>
-                            <!--<div id = "labelserverSend">die Daten wurden zum Server gesendet</div>-->
+                            <input type="button" value="saving:" class="submit" id="submit" name="submit" />
+                            <br>
+                            <input type="button" value="refresh" class="submit" id="submit2" name="submit" onClick="window.location.reload()"/>
                         </div>
+
+
                     </form>
                 </div>
             </div>
@@ -600,6 +604,9 @@
     </div>
 
     <script src="js/main.js"></script>
+
+
+
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
